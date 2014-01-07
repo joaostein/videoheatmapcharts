@@ -1,0 +1,19 @@
+{
+  "name": "videoheatmapCharts",
+  "version": "0.0.1",
+  "authors": [
+    "Joao Stein <joaosteing@gmail.com>"
+  ],
+  "description": "Charts used on admin panel of Videoheatmap",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": ">= 3.3.13"
+  }
+}

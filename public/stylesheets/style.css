@@ -1,0 +1,23 @@
+body {
+  overflow-y:scroll;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+text {
+  font: 12px sans-serif;
+}
+
+svg {
+  display: block;
+}
+
+svg {
+  height: 200px;
+  width: 960px;
+  min-width: 200px;
+  min-height: 100px;
+}
+
+h1 {
+  margin-left: 90px;
+}
