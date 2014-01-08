@@ -5,7 +5,8 @@ d3.json('javascripts/votes.json', function (error, data) {
   for (var i = 0; i < data.length; i++) {
     parseData(data[i]);
   }
-  createLineDaysVotes(months);
+  createLineDaysVotesChart(months);
+  createVideoLengthVotesChart(months);
 });
 
 var parseData = function (entry) {

@@ -32,7 +32,7 @@ var daysVotes = function (voteData) {
   ];
 };
 
-var createLineDaysVotes = function (voteData) {
+var createLineDaysVotesChart = function (voteData) {
   var data = daysVotes(voteData);
   var chart;
   nv.addGraph(function() {
