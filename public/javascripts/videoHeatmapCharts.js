@@ -1,22 +1,23 @@
 var monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-var months = {};
+var monthVotes = {};
 
 d3.json('javascripts/votes.json', function (error, data) {
   for (var i = 0; i < data.length; i++) {
-    parseData(data[i]);
+    parseDataByDays(data[i]);
   }
-  createLineDaysVotesChart(months);
-  createVideoLengthVotesChart(months);
+
+  createLineDaysVotesChart(monthVotes);
+  createVideoLengthVotesChart(monthVotes);
 });
 
-var parseData = function (entry) {
+var parseDataByDays = function (entry) {
   var date = new Date(entry.createdAt);
   var monthName = monthNames[date.getMonth()];
   var monthDay = date.getDate();
 
-  !!!months[monthName] && ( months[monthName] = createMonth() );
+  !!!monthVotes[monthName] && ( monthVotes[monthName] = createMonth() );
 
-  var votes = months[monthName].days[monthDay];
+  var votes = monthVotes[monthName].days[monthDay];
 
   votes.all += 1;
   entry.vote === 1 ? votes.positive += 1 : votes.negative += 1;
