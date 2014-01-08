@@ -1,5 +1,5 @@
 var createVideoLengthVotesChart = function (voteData) {
-  var data = daysVotes(voteData);
+  var data = lengthVotes(voteData);
   nv.addGraph(function() {
     var chart = nv.models.multiBarChart();
     chart.xAxis
