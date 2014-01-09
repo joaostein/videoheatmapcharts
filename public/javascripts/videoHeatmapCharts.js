@@ -1,14 +1,34 @@
 var monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 var monthVotes = {};
+var videoLengthVotes = {};
 
 d3.json('javascripts/votes.json', function (error, data) {
   for (var i = 0; i < data.length; i++) {
     parseDataByDays(data[i]);
+    parseDataByVideoLength(data[i]);
   }
 
   createLineDaysVotesChart(monthVotes);
-  createVideoLengthVotesChart(monthVotes);
+  createVideoLengthVotesChart(videoLengthVotes);
 });
+
+var parseDataByVideoLength = function (entry) {
+  !!!videoLengthVotes[entry.timestamp] && ( videoLengthVotes[entry.timestamp] = createTimestampVote() );
+  var vote = videoLengthVotes[entry.timestamp];
+
+  vote.all += 1;
+  entry.vote === 1 ? vote.positive += 1 : vote.negative += 1;
+  vote.timestamp = entry.timestamp;
+};
+
+var createTimestampVote = function () {
+  return {
+    timestamp: 0,
+    all: 0,
+    positive: 0,
+    negative: 0
+  };
+};
 
 var parseDataByDays = function (entry) {
   var date = new Date(entry.createdAt);
