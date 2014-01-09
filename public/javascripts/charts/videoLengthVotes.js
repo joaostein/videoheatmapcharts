@@ -1,7 +1,11 @@
 var createVideoLengthVotesChart = function (voteData) {
   var data = lengthVotes(voteData);
   nv.addGraph(function() {
-    var chart = nv.models.multiBarChart();
+    var chart = nv.models.multiBarChart()
+      .options({
+        showControls: false,
+        stacked: true
+      });
 
     chart.xAxis
         .tickFormat(d3.format(',f'));
