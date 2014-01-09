@@ -23,7 +23,6 @@ var parseDataByVideoLength = function (entry) {
 
 var createTimestampVote = function () {
   return {
-    timestamp: 0,
     all: 0,
     positive: 0,
     negative: 0
