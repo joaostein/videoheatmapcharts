@@ -12,7 +12,7 @@ var createLineDaysVotesChart = function (voteData) {
     });
 
     chart.xAxis
-      .axisLabel("Days")
+      .axisLabel('Days')
       .tickFormat(d3.format('0d'));
 
     chart.yAxis
