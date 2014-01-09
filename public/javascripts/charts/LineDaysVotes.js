@@ -6,7 +6,7 @@ var createLineDaysVotesChart = function (voteData) {
     .options({
       margin: {
         left: 100,
-        bottom: 100,
+        bottom: 100
       },
       showLegend: true
     });
